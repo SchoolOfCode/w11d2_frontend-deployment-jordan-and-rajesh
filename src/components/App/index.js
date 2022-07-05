@@ -13,14 +13,14 @@ const url = process.env.REACT_APP_BACKEND_URL ?? "http://localhost:3000";
 function App() {
   const [list, setList] = useState([]);
 
+  async function getShoppingList() {
+    const response = await fetch(`${url}/items`);
+    const data = await response.json(response);
+    console.log(data);
+    setList(data.payload);
+  }
   // Fetching shopping list data from shopping list API.
   useEffect(() => {
-    async function getShoppingList() {
-      const response = await fetch(`${url}/items`);
-      const data = await response.json(response);
-      console.log(data);
-      setList(data.payload);
-    }
     getShoppingList();
   }, []);
 
@@ -50,10 +50,16 @@ function App() {
     console.log(list);
   }
 
-  function clearList() {
+  async function clearList() {
     //This function clears all the items that have been added to the list.
+    const response = await fetch(`${url}/items`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+    console.log(response);
     const clearedList = [];
     setList(clearedList);
+    getShoppingList();
   }
 
   async function tickItem(idOfTickedItem) {
@@ -68,12 +74,12 @@ function App() {
     setList((previous) => {
       return previous.map((item) => {
         return item.id !== idOfTickedItem
-        ? item
-        : { ...item, completed: !item.completed };
+          ? item
+          : { ...item, completed: !item.completed };
       });
     });
   }
-  
+
   return (
     <section>
       <h1> team reel flash v3 </h1>
