@@ -46,6 +46,8 @@ function App() {
     const listItemWithId = data.payload;
 
     setList((previous) => [...previous, listItemWithId]);
+
+    console.log(list);
   }
 
   function clearList() {
@@ -69,7 +71,7 @@ function App() {
       <h1> team reel flash v3 </h1>
       <InputList addToList={addToList} buttonText={"Add To List"} />
       <ShowList list={list} tickItem={tickItem} />
-      <ClearList clearList={clearList} buttonText={"Clear List"} />
+      <ClearList clearList={clearList} buttonText={"Clear completed items"} />
     </section>
   );
 }

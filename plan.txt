@@ -1,0 +1,24 @@
+-   Can mark items as complete
+-   Can clear list in the front end, but this doesn't persist to the db
+
+
+We want to:
+-   Mark items as complete and have it persist upon refresh
+
+    -   create a db column called markedForDeletion
+    -   onClick of a list item will toggle completed between true and false
+    -   false = not marked (plain text), true = marked (strikethrough)
+    -   PATCH request on the frontend 
+    -   write route in backend 
+
+    
+
+
+-   Delete items from db when we hit the 'clear items' button
+
+    -   Change text on button to say "clear completed items"
+    -   onClick: DELETE all items from db with completed = true
+    -   DELETE request on the frontend 
+    -   write route in backend 
+
+-   filter/ sort items in db
