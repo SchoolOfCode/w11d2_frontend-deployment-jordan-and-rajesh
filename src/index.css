@@ -42,3 +42,7 @@ input {
 ol {
   margin: 1em;
 }
+
+h1 {
+  justify-content: center;
+}

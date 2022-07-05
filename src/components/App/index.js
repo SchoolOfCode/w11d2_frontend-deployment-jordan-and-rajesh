@@ -66,7 +66,7 @@ function App() {
 
   return (
     <section>
-      <h1> team bruh v2</h1>
+      <h1> team reel flash v3 </h1>
       <InputList addToList={addToList} buttonText={"Add To List"} />
       <ShowList list={list} tickItem={tickItem} />
       <ClearList clearList={clearList} buttonText={"Clear List"} />
