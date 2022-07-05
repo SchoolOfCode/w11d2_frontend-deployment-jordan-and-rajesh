@@ -56,16 +56,15 @@ function App() {
     setList(clearedList);
   }
 
-
   async function tickItem(idOfTickedItem) {
     const response = await fetch(`${url}/items`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: idOfTickedItem }),
     });
-    const data = await response.json()
+    const data = await response.json();
     console.log(data);
-
+    console.log(idOfTickedItem);
     setList((previous) => {
       return previous.map((item) => {
         return item.id !== idOfTickedItem
