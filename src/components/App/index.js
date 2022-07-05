@@ -68,12 +68,12 @@ function App() {
     setList((previous) => {
       return previous.map((item) => {
         return item.id !== idOfTickedItem
-          ? item
-          : { ...item, completed: !item.completed };
+        ? item
+        : { ...item, completed: !item.completed };
       });
     });
   }
-
+  
   return (
     <section>
       <h1> team reel flash v3 </h1>
