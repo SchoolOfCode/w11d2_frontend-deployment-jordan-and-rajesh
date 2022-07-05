@@ -10,8 +10,8 @@ We want to:
     -   false = not marked (plain text), true = marked (strikethrough)
     -   PATCH request on the frontend 
     -   write route in backend 
+    -   write new function to overwrite completed status on each list item
 
-    
 
 
 -   Delete items from db when we hit the 'clear items' button
