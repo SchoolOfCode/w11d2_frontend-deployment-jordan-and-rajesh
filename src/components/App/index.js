@@ -56,12 +56,6 @@ function App() {
     setList(clearedList);
   }
 
-  async function populateList() {
-    //repopulates list with all items that have a FALSE in the 'complete' column of the db
-    //look into the db for items with false in the complete column
-    //GET all items that match the criteria
-    //look at each item one by one (via id)
-  }
 
   async function tickItem(idOfTickedItem) {
     const response = await fetch(`${url}/items`, {
